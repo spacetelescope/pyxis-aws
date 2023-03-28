@@ -25,7 +25,7 @@ unzip awscliv2.zip
 ./aws/install
 curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
 mkdir /home/ec2-user/.aws
-yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+yum config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
 yum install terraform -y
 yum install git -y
 yum install python3 -y
@@ -93,12 +93,12 @@ cd /home/ec2-user
 mkdir rkein
 cd rkein
 # change to your github info
-git clone https://github.com/alphasentaurii/pyxis-aws
+git clone https://github.com/spacetelescope/pyxis-aws
 cd pyxis-aws
 git config --local user.name "alphasentaurii"
 ## uncomment and change to your email
 #git config --local user.email myname@stsci.edu
-git remote add upstream https://github.com/alphasentaurii/pyxis-aws --fetch --track main
+git remote add upstream https://github.com/spacetelescope/pyxis-aws --fetch --track main
 git remote set-url upstream DISABLED --push
 
 cd /home/ec2-user
