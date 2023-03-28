@@ -19,6 +19,12 @@ $ sh post_launch.sh
 An alternative to using SSH (if you have awscli installed on your machine)
 
 ```bash
+aws configure sso
+```
+
+or if already configured:
+
+```bash
 aws sso login
 ```
 
