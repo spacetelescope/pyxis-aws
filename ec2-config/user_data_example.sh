@@ -25,12 +25,15 @@ unzip awscliv2.zip
 ./aws/install
 curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
 mkdir /home/ec2-user/.aws
-yum config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+# if amazon (not amazon2) ami: yum config-manager
+yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
 yum install terraform -y
 yum install git -y
 yum install python3 -y
 yum groupinstall "Development Tools" -y
+# if amazon2 ami:
 amazon-linux-extras install -y docker
+# if amazon ami: yum install -y docker
 service docker start
 usermod -a -G docker ec2-user
 systemctl enable docker
